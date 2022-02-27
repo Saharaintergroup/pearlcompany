@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pear_inventory_product_made,pear_inventory.product_made,model_product_made,,1,1,1,1
+access_pear_inventory_product_brand,pear_inventory.product_brand,model_product_brand,,1,1,1,1
+access_pear_inventory_product_class,pear_inventory.product_class,model_product_class,,1,1,1,1
+access_pear_inventory_product_measurement,pear_inventory.product_measurement,model_product_measurement,,1,1,1,1
