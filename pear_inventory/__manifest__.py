@@ -2,7 +2,7 @@
 {
     'name': "Pear Inventory",
 
-    'depends': ['base', 'stock'],
+    'depends': ['base', 'stock', 'sale'],
 
     # always loaded
     'data': [
