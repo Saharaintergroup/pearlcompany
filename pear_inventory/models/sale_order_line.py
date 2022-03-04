@@ -1,4 +1,5 @@
 import math
+from datetime import timedelta
 
 from odoo import fields, models, api,_
 from odoo.tools import float_compare, float_round
@@ -45,3 +46,13 @@ class SaleOrderLine(models.Model):
             packaging_uom_qty = self.product_uom._compute_quantity(self.product_uom_qty, packaging_uom)
             # self.product_packaging_qty = float_round(packaging_uom_qty / self.product_packaging_id.qty, precision_rounding=packaging_uom.rounding,rounding_method="UP")
             self.product_packaging_qty = math.ceil(packaging_uom_qty / self.product_packaging_id.qty)
+
+
+    def _prepare_procurement_values(self, group_id=False):
+        """ Prepare specific key for moves or other components that will be created from a stock rule
+        comming from a sale order line. This method could be override in order to add other custom key that could
+        be used in move/po creation.
+        """
+        values = super(SaleOrderLine, self)._prepare_procurement_values(group_id)
+        values.update({'product_packaging_qty': self.product_packaging_qty})
+        return values
