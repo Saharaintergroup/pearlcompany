@@ -11,6 +11,9 @@
         'views/res_partner.xml',
         'views/sale_order.xml',
         'views/account_move.xml',
+        'views/sale_order_report.xml',
+        'views/invoice_report.xml',
+        'views/purchase_report.xml',
 
     ]
 
