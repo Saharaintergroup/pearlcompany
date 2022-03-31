@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_pear_sales_pear_sales,pear_sales.pear_sales,model_pear_sales_pear_sales,base.group_user,1,1,1,1
+access_pear_sales_so_report,pear_sales.so_report,model_so_report,,1,1,1,1
