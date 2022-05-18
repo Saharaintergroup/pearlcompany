@@ -14,10 +14,10 @@ class CreateWizard(models.TransientModel):
     def _get_report_pdf(self):
         cash_so_report = self.env['sale.order'].sudo().search(
             [('user_id', '=', self.user_id.id),
-             ('partner_id.cash_sale_customer', '=', True)])
+             ('partner_id.cash_sale_customer', '=', False)])
         no_cash_so_report = self.env['sale.order'].sudo().search(
             [('user_id', '=', self.user_id.id),
-             ('partner_id.cash_sale_customer', '=', False)])
+             ('partner_id.cash_sale_customer', '=', True)])
         out_refund = self.env['account.move'].sudo().search(
             [('invoice_date', '=', self.date), ('invoice_user_id', '=', self.user_id.id),
              ('move_type', '=', 'out_refund')])
