@@ -7,6 +7,8 @@ class SaleOrder(models.Model):
     customer_name = fields.Char("Customer Name")
     customer_phone = fields.Char("Customer Phone")
     is_customer_cash = fields.Boolean(default=False, string="Check")
+    partner_id = fields.Many2one(
+        'res.partner', string='Customer', change_default=False, default=lambda a: a.env.user.allowed_customer)
 
     @api.onchange('partner_id')
     def check_customer_cash(self):

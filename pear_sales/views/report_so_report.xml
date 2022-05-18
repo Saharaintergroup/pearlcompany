@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_so_document">
+        <t t-call="web.html_container">
+            <!--        <t t-foreach="docs" t-as="o">-->
+            <t t-call="web.external_layout">
+                <div class="page" style="direction:rtl;">
+                    <h3 class="text-center">تقرير المبيعات</h3>
+                    <h6 class="text-center">
+                        <span t-esc="date"/>
+                    </h6>
+                    <br/>
+                    <table class="table table-sm table-bordered">
+                        <thead>
+                            <tr>
+                                <td class="text-center">المبيعات الآجلة
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="total_cash"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">المبيعات النقدية خزينة المبيعات
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="total_no_cash"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">ترجيع مبيعات
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="total_out_refund"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">المقبوضات (نقدي)
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="total_receipts_cash"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">المقبوضات (بنك)
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="total_receipts_bank"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">المدفوعات (نقدي)
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="total_payments_cash"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">المدفوعات (كاش)
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="total_payments_bank"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">النقدية المتاحة
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="available_cash"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">المعاملات
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="available_bank"/>
+                                </td>
+                            </tr>
+                        </thead>
+
+                    </table>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <h5 style="margin-left:342px;margin-right:30px;">
+                            إسم مسئول المبيعات:
+                        </h5>
+                        <h5>
+                            إسم المستلم:
+                        </h5>
+                    </div>
+                    <div class="row">
+                        <h5 style="margin-left:515px;margin-right:30px;">
+                            التوقيع:
+                        </h5>
+                        <h5>
+                            التوقيع:
+                        </h5>
+                    </div>
+                    <br/>
+                </div>
+            </t>
+        </t>
+        <!--    </t>-->
+    </template>
+</odoo>
