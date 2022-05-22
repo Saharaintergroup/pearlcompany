@@ -13,7 +13,8 @@
 
                 </xpath>
                 <xpath expr="//field[@name='payment_term_id']" position="after">
-                    <field name="warehouse_loc_id" options="{'no_create': True}" groups="stock.group_stock_multi_warehouses" force_save="1"/>
+<!--                    <field name="warehouse_loc_id" options="{'no_create': True}" groups="stock.group_stock_multi_warehouses" force_save="1"/>-->
+                    <field name="warehouse_id" options="{'no_create': True}" groups="stock.group_stock_multi_warehouses" force_save="1"/>
                 </xpath>
             </field>
         </record>

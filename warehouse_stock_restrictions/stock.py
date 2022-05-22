@@ -45,25 +45,25 @@ class stock_move(models.Model):
                 elif rec.location_dest_id.id not in user_locations:
                     raise UserError(message % rec.location_dest_id.name)
 
-class allow_warehouse(models.Model):
-    _inherit = 'sale.order'
-
-    warehouse_loc_id = fields.Many2one(
-        'stock.warehouse', string='Warehouse',
-        required=False, readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},
-        check_company=True)
-
-    @api.onchange('partner_id')
-    def set_domain_for_warehouse(self):
-
-        class_obj = self.env['res.users']
-        loc_ids=[]
-        for data in class_obj.env.user.default_picking_type_ids:
-            loc_ids.append(data.warehouse_id.id)
-
-        res = {}
-        res['domain'] = {'warehouse_loc_id': [('id', 'in', loc_ids)]}
-        return res
+# class allow_warehouse(models.Model):
+#     _inherit = 'sale.order'
+#
+#     warehouse_loc_id = fields.Many2one(
+#         'stock.warehouse', string='Warehouse',
+#         required=False, readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},
+#         check_company=True)
+#
+#     @api.onchange('partner_id')
+#     def set_domain_for_warehouse(self):
+#
+#         class_obj = self.env['res.users']
+#         loc_ids=[]
+#         for data in class_obj.env.user.default_picking_type_ids:
+#             loc_ids.append(data.warehouse_id.id)
+#
+#         res = {}
+#         res['domain'] = {'warehouse_loc_id': [('id', 'in', loc_ids)]}
+#         return res
 
 
 

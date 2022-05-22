@@ -35,9 +35,9 @@
         </record>
 
         <menuitem id="create_so_report" name="Sale Orders Reports"
-                  parent="sale.menu_sale_report"
+                  parent="sale.sale_menu_root"
                   action="so_report_action_wizard"
-                  sequence="2"/>
+                  sequence="5"/>
 
 
     </data>

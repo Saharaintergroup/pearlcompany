@@ -1,10 +1,15 @@
 from odoo import fields, models, api
 
 
-class StockMoveLine(models.Model):
+class StockMove(models.Model):
     _inherit = 'stock.move'
 
     product_packaging_qty = fields.Float("Product Packaging Qty")
+
+class StockMoveLine(models.Model):
+    _inherit = 'stock.move.line'
+
+    product_packaging_qty = fields.Float("Product Packaging Qty",related='move_id.product_packaging_qty')
 
 class StockRule(models.Model):
     _inherit = 'stock.rule'
