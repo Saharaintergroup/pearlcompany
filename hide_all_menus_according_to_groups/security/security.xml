@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--    hide hr menu-->
+<!--    <record model="res.groups" id="group_hr_menu">-->
+<!--        <field name="name">Show HR Menu</field>-->
+<!--    </record>-->
+<!--    <record id="hr.menu_hr_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_hr_menu')])]"/>-->
+<!--    </record>-->
+<!--    <record id="hr_attendance.menu_hr_attendance_view_employees_kanban" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_hr_menu')])]"/>-->
+<!--    </record>-->
+<!--    &lt;!&ndash;    hide purchase root menu&ndash;&gt;-->
+<!--    <record model="res.groups" id="group_purchase_menu">-->
+<!--        <field name="name">Group Purchase Menu</field>-->
+<!--    </record>-->
+<!--    <record id="purchase.menu_purchase_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_purchase_menu')])]"/>-->
+<!--    </record>-->
+<!--    &lt;!&ndash;    hide sale menu&ndash;&gt;-->
+<!--    <record model="res.groups" id="group_sale_menu">-->
+<!--        <field name="name">Group sale Menu</field>-->
+<!--    </record>-->
+<!--    <record id="sale.sale_menu_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_sale_menu')])]"/>-->
+<!--    </record>-->
+<!--    hide invoicing menu-->
+    <record model="res.groups" id="group_invoices_menu">
+        <field name="name">Group Invoicing Menu</field>
+    </record>
+    <record id="account_accountant.menu_accounting" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_invoices_menu')])]"/>
+    </record>
+<!--&lt;!&ndash;    hide Maintenance menu&ndash;&gt;-->
+<!--    <record model="res.groups" id="group_Maintenance_menu">-->
+<!--        <field name="name">Group Maintenance Menu</field>-->
+<!--    </record>-->
+<!--    <record id="maintenance.menu_maintenance_title" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_Maintenance_menu')])]"/>-->
+<!--    </record>-->
+<!--&lt;!&ndash;    hide Manufacturing menu&ndash;&gt;-->
+<!--    <record model="res.groups" id="group_Manufacturing_menu">-->
+<!--        <field name="name">Group Manufacturing Menu</field>-->
+<!--    </record>-->
+<!--    <record id="mrp.menu_mrp_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_Manufacturing_menu')])]"/>-->
+<!--    </record>-->
+<!--    &lt;!&ndash;    hide Point of Sale menu&ndash;&gt;-->
+<!--    <record model="res.groups" id="group_Point_of_Sale_menu">-->
+<!--        <field name="name">Group Point of Sale Menu</field>-->
+<!--    </record>-->
+<!--    <record id="point_of_sale.menu_point_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_Point_of_Sale_menu')])]"/>-->
+<!--    </record>-->
+<!--    &lt;!&ndash;    hide Projects menu&ndash;&gt;-->
+<!--    <record model="res.groups" id="group_Projects_menu">-->
+<!--        <field name="name">Group Projects Menu</field>-->
+<!--    </record>-->
+<!--    <record id="project.menu_main_pm" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_Projects_menu')])]"/>-->
+<!--    </record>-->
+<!--    &lt;!&ndash;    hide menu_link_tracker_root menu&ndash;&gt;-->
+<!--    <record model="res.groups" id="group_link_tracker_menu">-->
+<!--        <field name="name">Group Link traker Menu</field>-->
+<!--    </record>-->
+<!--    <record id="utm.menu_link_tracker_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_link_tracker_menu')])]"/>-->
+<!--    </record>-->
+<!--    &lt;!&ndash;    hide invatory menu&ndash;&gt;-->
+<!--    <record model="res.groups" id="group_invatory_menu">-->
+<!--        <field name="name">Group Invatory Menu</field>-->
+<!--    </record>-->
+<!--    <record id="stock.menu_stock_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_invatory_menu')])]"/>-->
+<!--    </record>-->
+    <!--    hide Website menu-->
+<!--    <record model="res.groups" id="group_website_menu">-->
+<!--        <field name="name">Show Website Menu</field>-->
+<!--    </record>-->
+<!--    <record id="website.menu_website_configuration" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_website_menu')])]"/>-->
+<!--    </record>-->
+    <!--    hide discuss menu-->
+<!--    <record model="res.groups" id="group_discuss_menu">-->
+<!--        <field name="name">Group Discuss Menu</field>-->
+<!--    </record>-->
+<!--    <record id="mail.menu_root_discuss" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_discuss_menu')])]"/>-->
+<!--    </record>-->
+    <!--    hide Attendance menu-->
+<!--    <record model="res.groups" id="group_attendance_menu">-->
+<!--        <field name="name">Show Attendance Menu</field>-->
+<!--    </record>-->
+<!--    <record id="hr_attendance.menu_hr_attendance_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_attendance_menu')])]"/>-->
+<!--    </record>-->
+<!--    &lt;!&ndash;    hide Helpdesk menu&ndash;&gt;-->
+<!--    <record model="res.groups" id="group_helpdesk_menu">-->
+<!--        <field name="name">Show Helpdesk Menu</field>-->
+<!--    </record>-->
+<!--    <record id="helpdesk.menu_helpdesk_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_helpdesk_menu')])]"/>-->
+<!--    </record>-->
+
+<!--    &lt;!&ndash;    hide TimeOff menu&ndash;&gt;-->
+<!--    <record model="res.groups" id="group_timeoff_menu">-->
+<!--        <field name="name">Show TimeOff Menu</field>-->
+<!--    </record>-->
+<!--    <record id="hr_holidays.menu_hr_holidays_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_timeoff_menu')])]"/>-->
+<!--    </record>-->
+<!--    &lt;!&ndash;    hide documents menu&ndash;&gt;-->
+<!--    <record model="res.groups" id="group_documents_menu">-->
+<!--        <field name="name">Show Documents Menu</field>-->
+<!--    </record>-->
+<!--    <record id="documents.menu_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_documents_menu')])]"/>-->
+<!--    </record>-->
+<!--    &lt;!&ndash;    hide contacts menu&ndash;&gt;-->
+<!--    <record model="res.groups" id="group_contacts_menu">-->
+<!--        <field name="name">Show Contacts Menu</field>-->
+<!--    </record>-->
+<!--    <record id="contacts.menu_contacts" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('hide_all_menus_according_to_groups.group_contacts_menu')])]"/>-->
+<!--    </record>-->
+</odoo>

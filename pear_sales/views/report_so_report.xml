@@ -55,7 +55,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-center">المدفوعات (كاش)
+                                <td class="text-center">المدفوعات (بنك)
                                 </td>
                                 <td class="text-center">
                                     <span t-esc="total_payments_bank"/>
