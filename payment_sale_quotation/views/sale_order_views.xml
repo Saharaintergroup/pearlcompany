@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_order_form" model="ir.ui.view">
+            <field name="name">sale.order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='action_cancel']" position="after">
+                    <button name="create_payment"
+                            string="Register Payment"
+                            type="object"
+                            class="btn-primary"/>
+                </xpath>
+                <xpath expr="//field[@name='tax_totals_json']" position="after">
+                    <button name="view_sale_order_payments"
+                            string="Payments"
+                            type="object"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

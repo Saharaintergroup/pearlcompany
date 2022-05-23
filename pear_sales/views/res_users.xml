@@ -11,6 +11,7 @@
                 <group name="preferences" position="after">
                     <group string="Allowed Cash Customer">
                         <field name="allowed_customer"/>
+                        <field name="readonly_customer"/>
                     </group>
                 </group>
             </field>
