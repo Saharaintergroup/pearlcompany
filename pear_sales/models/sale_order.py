@@ -21,7 +21,6 @@ class SaleOrder(models.Model):
     @api.depends('user_id.readonly_customer')
     def _check_customer_readonly(self):
         for rec in self:
-            print("//////", rec.user_id.readonly_customer)
             if rec.user_id.readonly_customer:
                 rec.readonly_customer = True
             else:
