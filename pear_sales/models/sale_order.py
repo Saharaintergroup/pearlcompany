@@ -9,6 +9,7 @@ class SaleOrder(models.Model):
     is_customer_cash = fields.Boolean(default=False, string="Check")
     partner_id = fields.Many2one(
         'res.partner', string='Customer', change_default=False, default=lambda a: a.env.user.allowed_customer)
+    readonly_customer = fields.Boolean(compute='_check_customer_readonly', store=True)
 
     @api.onchange('partner_id')
     def check_customer_cash(self):
@@ -16,6 +17,14 @@ class SaleOrder(models.Model):
             self.is_customer_cash = True
         else:
             self.is_customer_cash = False
+
+    @api.depends('user_id.readonly_customer')
+    def _check_customer_readonly(self):
+        for rec in self:
+            if rec.user_id.readonly_customer:
+                rec.readonly_customer = True
+            else:
+                rec.readonly_customer = False
 
     def _prepare_invoice(self):
         """
