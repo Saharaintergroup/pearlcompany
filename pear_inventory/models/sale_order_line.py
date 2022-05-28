@@ -43,7 +43,11 @@ class SaleOrderLine(models.Model):
             self.product_packaging_qty = False
         else:
             packaging_uom = self.product_packaging_id.product_uom_id
-            packaging_uom_qty = self.product_uom._compute_quantity(self.product_uom_qty, packaging_uom)
+            packaging_uom_qty = round(self.product_uom._compute_quantity(self.product_uom_qty, packaging_uom),2)
+            # print("packaging_uom_qty",round(packaging_uom_qty,2))
+            # print("packaging_uom_qty",float_round(packaging_uom_qty, precision_rounding=packaging_uom.rounding,rounding_method="UP"))
+            # print("self.product_packaging_id.qty",self.product_packaging_id.qty)
+            # print("packaging_uom_qty / self.product_packaging_id.qty",packaging_uom_qty / self.product_packaging_id.qty)
             # self.product_packaging_qty = float_round(packaging_uom_qty / self.product_packaging_id.qty, precision_rounding=packaging_uom.rounding,rounding_method="UP")
             self.product_packaging_qty = math.ceil(packaging_uom_qty / self.product_packaging_id.qty)
 
