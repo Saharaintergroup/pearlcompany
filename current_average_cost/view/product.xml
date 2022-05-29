@@ -11,7 +11,7 @@
 					<xpath expr="//field[@name='standard_price']" position="attributes">
 						<attribute name="readonly">1</attribute>
 					</xpath>
-					<field name="company_id" position="before">
+					<field name="standard_price" position="after">
 						<field name="show_current_avarage_cost" invisible="1" />
 						<field name="avarage_cost" attrs="{'invisible':[('show_current_avarage_cost','!=',True)]}"/>
 
