@@ -10,6 +10,7 @@
         'security/security.xml',
         'views/product_template.xml',
         'views/stock_picking.xml',
+        'views/picking_operations.xml'
         # 'views/stock_return_picking_line.xml',
 
     ],

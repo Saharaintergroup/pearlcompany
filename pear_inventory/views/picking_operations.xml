@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_picking_inherit" inherit_id="stock.report_picking">
+        <xpath expr="//th[@name='th_product']" position="after">
+            <th name="th_product_package_qty">
+                <strong>Product Packaging Qty</strong>
+            </th>
+        </xpath>
+        <xpath expr="//t[@t-foreach='o.move_line_ids_without_package']/tr/td" position="after">
+            <td>
+                <span t-field="ml.product_packaging_qty"/>
+            </td>
+        </xpath>
+    </template>
+</odoo>
