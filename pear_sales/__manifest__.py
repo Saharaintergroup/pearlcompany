@@ -18,6 +18,8 @@
         'views/purchase_report.xml',
         'views/res_users.xml',
         'views/report_so_report.xml',
+        'views/stock_picking.xml',
+        'views/stock_picking_report.xml',
 
     ]
 
