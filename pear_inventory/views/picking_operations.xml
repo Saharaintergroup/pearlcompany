@@ -12,4 +12,36 @@
             </td>
         </xpath>
     </template>
+<!--    <template id="report_deliveryslip_inherit" inherit_id="stock.stock_report_delivery_has_serial_move_line">-->
+<!--        <xpath expr="//td" position="after">-->
+<!--            <td>-->
+<!--                <span t-field="move_line.product_packaging_qty"/>-->
+<!--            </td>-->
+<!--        </xpath>-->
+<!--    </template>-->
+<!--    <template id="report_deliveryslip_inherit" inherit_id="stock.stock_report_delivery_aggregated_move_lines">-->
+<!--        <xpath expr="//tr[@t-foreach='aggregated_lines']/td" position="after">-->
+<!--            <td>-->
+<!--                <span>xxxxxxxxxxxx</span>-->
+<!--            </td>-->
+<!--        </xpath>-->
+<!--    </template>-->
+<!--    <template id="report_deliveryslip_inherit" inherit_id="stock.report_delivery_document">-->
+<!--        <xpath expr="//th[@name='th_sml_product']" position="after">-->
+<!--            <th name="th_product_package_qty">-->
+<!--                <strong>Product Packaging Qty</strong>-->
+<!--            </th>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//tr[@t-foreach='lines']/td" position="after">-->
+<!--            <td>-->
+<!--                <span t-field="move.product_packaging_qty"/>-->
+<!--            </td>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//t[@name='has_packages']" position="inside">-->
+<!--            <td>-->
+<!--                <span t-field="package.product_packaging_qty"/>-->
+<!--            </td>-->
+<!--        </xpath>-->
+
+<!--    </template>-->
 </odoo>
