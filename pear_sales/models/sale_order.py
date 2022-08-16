@@ -26,6 +26,14 @@ class SaleOrder(models.Model):
             else:
                 rec.readonly_customer = False
 
+    def _action_confirm(self):
+        res = super(SaleOrder, self)._action_confirm()
+        for do_pick in self.picking_ids:
+            do_pick.write({'customer_name': self.customer_name,
+                           'customer_phone': self.customer_phone,
+                           })
+        return res
+
     def _prepare_invoice(self):
         """
         Prepare the dict of values to create the new invoice for a sales order. This method may be

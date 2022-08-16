@@ -7,6 +7,18 @@
                 <th name="th_packaging_qty" class="text-center">Packaging Quantity</th>
                 <th name="th_packaging" class="text-center">Packaging</th>
             </xpath>
+            <xpath expr="//t[@t-set='address']" position="after">
+
+                <t t-if="o.customer_name">
+                    Customer Name :
+                    <span t-field="o.customer_name"/>
+                </t><br/>
+                <t t-if="o.customer_phone">
+                    Customer Phone :
+                    <span t-field="o.customer_phone"/>
+                </t><br/>
+
+            </xpath>
             <xpath expr="//table[hasclass('o_main_table')]/tbody/t/tr/t/td[2]" position="after">
                 <td class="text-center">
                     <span t-field="line.product_packaging_qty"/>

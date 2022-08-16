@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_picking_inherit" inherit_id="stock.report_picking">
+        <xpath expr="//div[@class='page']/div" position="before">
+            <div class="text-right">
+                <p t-if="o.customer_name">
+                    اسم العميل :
+                    <span t-field="o.customer_name"/>
+                </p>
+                <p t-if="o.customer_phone">
+                    رقم العميل :
+                    <span t-field="o.customer_phone"/>
+                </p>
+            </div>
+        </xpath>
+    </template>
+</odoo>
