@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Inherit Form View to Modify it -->
+    <record id="inherit_view_move_form" model="ir.ui.view">
+        <field name="name">inherit_view_move_form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='amount_residual']" position="after">
+                <!-- Add your fields or attributes here -->
+                <field name="customer_balance" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <template id="report_invoice_customer_balance" inherit_id="account.report_invoice_document">
+
+        <xpath expr="//div[@class='clearfix']" position="after">
+
+
+            <div class="customer_balance">
+                        <div id="customer_balance" class="row">
+                            <div t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto">
+                                <table class="table table-sm" style="page-break-inside: avoid;">
+                                    <tr class="border-black o_subtotal" style="">
+                                        <td><strong>Customer Balance</strong></td>
+                                        <td class="text-right">
+                                            <span t-field="o.customer_balance"
+                                            t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                                            />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+            </div>
+
+            </xpath>
+
+
+
+
+        </template>
+
+
+
+</odoo>
