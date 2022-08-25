@@ -14,7 +14,7 @@ class AccountMove(models.Model):
             total_due = 0.0
             customer_balance = 0.0
             if rec.partner_id:
-                total_due = rec.partner_id.total_invoiced
+                total_due = rec.partner_id.total_due
                 customer_balance = abs(total_due - rec.amount_total)
             rec.customer_balance = customer_balance
 
