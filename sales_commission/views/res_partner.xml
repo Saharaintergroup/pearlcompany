@@ -12,11 +12,12 @@
                     <field name="has_commission"/>
                 </xpath>
                 <xpath expr="//page[@name='internal_notes']" position="after">
-                    <page string="Commission">
+                    <page string="Commission"
+                          attrs="{'invisible': [('has_commission', '=', False)]}">
                         <group col="4">
                             <group>
-                                <field name="commission_percentage"/>
-<!--                                <field name="commission_depends" widget="radio"/>-->
+                                <field name="commission_percentage" attrs="{'required':[('has_commission', '!=', False)]}"/>
+                                <!--                                <field name="commission_depends" widget="radio"/>-->
                             </group>
                         </group>
                     </page>
