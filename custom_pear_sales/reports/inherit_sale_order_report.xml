@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+
+        <template id="inherit_report_so_document" inherit_id="pear_sales.report_so_document">
+            <xpath expr="//div[1]/h3" position="replace">
+
+                    <p style="direction:rtl;font-size:30px" class="text-center"> تقرير مبيعات <span t-esc="user_id"/> </p>
+
+
+
+            </xpath>
+        </template>
+
+    </data>
+</odoo>
