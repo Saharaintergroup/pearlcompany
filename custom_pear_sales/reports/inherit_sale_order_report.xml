@@ -2,15 +2,40 @@
 <odoo>
     <data>
 
+        <record id="inherit_so_report_wizard" model="ir.ui.view">
+            <field name="name">inherit.so.report.wizard</field>
+            <field name="model">so.report</field>
+            <field name="inherit_id" ref="pear_sales.so_report_form_wizard"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group/field[@name='user_id']" position="after">
+                    <field name="is_amanager" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('is_amanager', '=', False)]}</attribute>
+                </xpath>
+
+            </field>
+        </record>
 
         <template id="inherit_report_so_document" inherit_id="pear_sales.report_so_document">
             <xpath expr="//div[1]/h3" position="replace">
-
-                    <p style="direction:rtl;font-size:30px" class="text-center"> تقرير مبيعات <span t-esc="user_id"/> </p>
-
-
+                <p style="direction:rtl;font-size:30px" class="text-center">تقرير مبيعات
+                    <span t-esc="user_id"/>
+                </p>
+            </xpath>
+            <xpath expr="//div[1]/table/thead/tr[8]" position="replace"/>
+            <xpath expr="//div[1]/table/thead/tr[1]" position="before">
+                <tr style="font-weight:bold;background-color:grey; color:white;font-size:30px;">
+                    <td class="text-center">النقدية المتاحة
+                    </td>
+                    <td class="text-center">
+                        <span t-esc="available_cash"/>
+                    </td>
+                </tr>
 
             </xpath>
+
+
         </template>
 
     </data>
