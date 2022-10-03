@@ -13,9 +13,9 @@ class AccountMove(models.Model):
         for rec in self:
             total_due = 0.0
             customer_balance = 0.0
-            if rec.partner_id:
+            if rec.partner_id and not rec.partner_id.cash_sale_customer:
                 total_due = rec.partner_id.total_due
-                customer_balance = abs(total_due - rec.amount_total)
+                customer_balance = abs(total_due)
             rec.customer_balance = customer_balance
 
 

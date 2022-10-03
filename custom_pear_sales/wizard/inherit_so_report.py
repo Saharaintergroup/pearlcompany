@@ -7,6 +7,13 @@ class InheritCreateWizard(models.TransientModel):
     _inherit = 'so.report'
     _description = 'So Report'
 
+    is_amanager=fields.Boolean(compute='_compute_is_amanager')
+    @api.depends('user_id')
+    def _compute_is_amanager(self):
+        if not self.env.user.has_group('base.group_erp_manager') or not  self.env.user.has_group('base.group_system'):
+            self.is_amanager = False
+        else:
+            self.is_amanager = True
 
     def _get_report_pdf(self):
         cash_so_report = self.env['sale.order'].sudo().search(
@@ -68,3 +75,14 @@ class InheritCreateWizard(models.TransientModel):
             'available_cash': total_receipts_cash - total_payments_cash,
             'available_bank': total_receipts_bank - total_payments_bank,
         }
+
+
+
+    # check_login_user = fields.Boolean(compute='_check_login_user_group', store=True)
+    # @api.depends('date')
+    # def _check_login_user_group(self):
+    #     desired_group_name = self.env.user.has_group('base.group_erp_manager')
+    #     for line in self:
+    #         line.check_login_user = False
+    #         if desired_group_name:
+    #             line.check_login_user = True
